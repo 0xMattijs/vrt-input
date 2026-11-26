@@ -10,6 +10,8 @@ workflow checks the entry and uses it as the GitHub release notes. Collect chang
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-26
+
 ### Added
 
 - `VrtInput`: a React component for choosing a VRT entry, as a hierarchical menu with a filter
