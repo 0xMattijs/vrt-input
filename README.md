@@ -3,6 +3,10 @@
 A React component and a framework-free core for choosing entries from Bugcrowd's
 [Vulnerability Rating Taxonomy](https://github.com/bugcrowd/vulnerability-rating-taxonomy) (VRT).
 
+**[Try the demo](https://0xmattijs.github.io/vrt-input/)**
+
+![The vrt-input menu, open on Cross-Site Scripting (XSS) › Stored, with columns for category, subcategory, and variant, and a priority badge next to each entry](https://raw.githubusercontent.com/0xMattijs/vrt-input/master/docs/screenshot.png)
+
 - Choose a category, subcategory, and variant from a hierarchical menu, or type to filter, such as
   "stored xss".
 - Use three linked dropdowns instead, bound to the same value.
