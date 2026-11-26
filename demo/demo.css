@@ -1,10 +1,19 @@
 :root { color-scheme: light dark; }
 body { margin: 0; background: Canvas; color: CanvasText; font-family: system-ui, sans-serif; }
-main { max-width: 960px; margin: 0 auto; padding: 24px 16px 360px; }
+main { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
 main > section { margin-top: 32px; display: grid; gap: 12px; }
 h2 { font-size: 18px; margin: 0; }
-.controls, .samples { margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.controls, .samples { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
 .samples button { font: 12px ui-monospace, monospace; padding: 4px 8px; cursor: pointer; }
 .hint { margin: 0; font-size: 13px; }
-.hint code, output code { overflow-wrap: anywhere; }
-output { display: block; font-size: 13px; }
+.hint code { overflow-wrap: anywhere; }
+h3 { font-size: 15px; margin: 8px 0 0; }
+.layered { display: grid; gap: 12px; }
+.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.column { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.requirements { display: flex; flex-wrap: wrap; gap: 8px 16px; border: 1px solid #8884; border-radius: 6px; padding: 8px 12px; font-size: 13px; }
+.matrix-wrap { overflow-x: auto; }
+.matrix { border-collapse: collapse; font-size: 13px; }
+.matrix th, .matrix td { padding: 6px 10px; border-bottom: 1px solid #8884; text-align: left; white-space: nowrap; }
+.matrix button { font: inherit; background: none; border: 1px solid transparent; border-radius: 4px; padding: 2px 6px; cursor: pointer; color: inherit; }
+.matrix td[data-selected] button { border-color: currentColor; font-weight: 600; }

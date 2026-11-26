@@ -47,40 +47,42 @@ function Demo() {
               ))}
             </select>
           </label>
-          <label>
-            <input type="checkbox" checked={showPriority} onChange={(e) => setShowPriority(e.target.checked)} /> Show
-            priority
-          </label>
-          <label>
-            <input type="checkbox" checked={allowPartial} onChange={(e) => setAllowPartial(e.target.checked)} /> Allow
-            partial
-          </label>
         </div>
-        <div className="samples">
-          {SAMPLES.map((s) => (
-            <button key={s} type="button" onClick={() => setValue(s)}>
-              {s === '' ? '(empty)' : s.length > 40 ? s.slice(0, 40) + '…' : s}
-            </button>
-          ))}
-        </div>
-        <output>
-          Value: <code>{value || '(empty)'}</code> · {result.valid ? 'valid' : 'not valid'}
-          {result.valid && result.priority !== null && <> · {formatPriority(result.priority, messages)}</>}
-        </output>
 
         <section>
-          <h2>Menu</h2>
+          <h2>Hierarchical menu</h2>
+          <div className="controls">
+            <label>
+              <input type="checkbox" checked={showPriority} onChange={(e) => setShowPriority(e.target.checked)} /> Show
+              priority
+            </label>
+            <label>
+              <input type="checkbox" checked={allowPartial} onChange={(e) => setAllowPartial(e.target.checked)} />{' '}
+              Allow partial
+            </label>
+          </div>
+          <div className="samples">
+            {SAMPLES.map((s) => (
+              <button key={s} type="button" onClick={() => setValue(s)}>
+                {s === '' ? '(empty)' : s.length > 34 ? s.slice(0, 34) + '…' : s}
+              </button>
+            ))}
+          </div>
           <p className="hint">
             Click through the columns, or type to filter, such as "stored xss" or "idor". Arrow keys move through
             the columns.
           </p>
           <VrtInput value={value} onChange={setValue} showPriority={showPriority} allowPartial={allowPartial} />
+          <p className="hint">
+            Value: <code>{value || '(empty)'}</code> · {result.valid ? 'valid' : 'not valid'}
+            {result.valid && result.priority !== null && <> · {formatPriority(result.priority, messages)}</>}
+          </p>
         </section>
 
         <section>
-          <h2>Dropdowns</h2>
+          <h2>Three dropdowns, bound to the same value</h2>
           <p className="hint">
-            <code>mode="dropdowns"</code>, bound to the same value as the menu above.
+            <code>mode="dropdowns"</code> edits the same value as the menu above.
           </p>
           <VrtInput
             value={value}
