@@ -1,0 +1,79 @@
+{
+  "name": "@alcyonsecurity/vrt-input",
+  "version": "0.1.0",
+  "description": "React component and core for picking Bugcrowd Vulnerability Rating Taxonomy (VRT) entries",
+  "keywords": [
+    "vrt",
+    "vulnerability-rating-taxonomy",
+    "bugcrowd",
+    "vulnerability",
+    "security",
+    "bug-bounty",
+    "taxonomy",
+    "react"
+  ],
+  "homepage": "https://github.com/0xMattijs/vrt-input#readme",
+  "bugs": {
+    "url": "https://github.com/0xMattijs/vrt-input/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xMattijs/vrt-input.git"
+  },
+  "license": "MIT",
+  "author": "Mattijs van Ommeren",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "require": "./dist/core.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsup && node scripts/postbuild.mjs",
+    "dev": "vite --config demo/vite.config.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "build:demo": "vite build --config demo/vite.config.ts",
+    "fetch-vrt": "node scripts/fetch-vrt.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.12",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "axe-core": "^4.14.1",
+    "jsdom": "^31.0.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tsup": "^9.0.0",
+    "typescript": "5.9",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  }
+}

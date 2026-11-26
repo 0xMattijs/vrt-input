@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a wrong lookup, a validation problem, or a problem with the component.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: vector
+    attributes:
+      label: VRT ID
+      description: The VRT ID that shows the problem, if any.
+      placeholder: "cross_site_scripting_xss.stored.non_privileged_user_to_anyone"
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happens
+      description: The priority, message, or behavior you see.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: For a wrong priority or name, link the VRT release that shows the expected value.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: For a component problem, include the props you pass and the browser you use.

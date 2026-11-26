@@ -1,0 +1,10 @@
+vrt-input
+Copyright (c) 2026 Mattijs van Ommeren
+
+This package includes data from the Bugcrowd Vulnerability Rating Taxonomy
+(https://github.com/bugcrowd/vulnerability-rating-taxonomy), release v1.19.1:
+vulnerability-rating-taxonomy.json and deprecated-node-mapping.json, reduced to
+the fields this package uses, in src/core/data/vrt.ts.
+
+Copyright Bugcrowd, Inc. Licensed under the Apache License, Version 2.0.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0

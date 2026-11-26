@@ -1,0 +1,27 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # One pull request per week for all development dependencies.
+    groups:
+      dev-dependencies:
+        dependency-type: development
+    open-pull-requests-limit: 5
+    ignore:
+      # tsup can't build type declarations with TypeScript 7 yet: it needs the
+      # TypeScript JavaScript API, which 7 doesn't provide. Revisit when tsup supports it.
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
+      # Keep Node types at the Node versions CI runs on (22 and 24).
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ['*']

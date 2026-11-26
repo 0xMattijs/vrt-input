@@ -1,0 +1,10 @@
+:root { color-scheme: light dark; }
+body { margin: 0; background: Canvas; color: CanvasText; font-family: system-ui, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 24px 16px 360px; }
+main > section { margin-top: 32px; display: grid; gap: 12px; }
+h2 { font-size: 18px; margin: 0; }
+.controls, .samples { margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.samples button { font: 12px ui-monospace, monospace; padding: 4px 8px; cursor: pointer; }
+.hint { margin: 0; font-size: 13px; }
+.hint code, output code { overflow-wrap: anywhere; }
+output { display: block; font-size: 13px; }
